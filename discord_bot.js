@@ -556,7 +556,7 @@ var commands = {
               fields: ['s', 'n', 'd1', 'l1', 'y', 'r'],
             }, function (error, snapshot) {
                 if(error){
-                    bot.sendMessage(msg.channel,"couldn't get stock: " + error);
+                    bot.sendMessage(msg.channel,"couldn't get boring stock information for nerds: " + error);
                 } else {
                     //bot.sendMessage(msg.channel,JSON.stringify(snapshot));
                     bot.sendMessage(msg.channel,snapshot.name + "\nprice: $" + snapshot.lastTradePriceOnly);
@@ -610,7 +610,7 @@ var commands = {
             var joke = JSON.parse(body);
             bot.sendMessage(msg.channel,joke.value.joke);
           } else {
-            console.log("Got an error: ", error, ", status code: ", response.statusCode);
+            console.log("Was unable to stroke.: ", error, ", status code: ", response.statusCode);
           }
         });
       }
@@ -793,7 +793,7 @@ var commands = {
         csgomarket.getSinglePrice(skinInfo[1],skinInfo[3],skinInfo[5],skinInfo[7], function (err, skinData) {
           if (err) {
             console.error('ERROR', err);
-            bot.sendMessage(msg.channel,"That skin doesn't exist!");
+            bot.sendMessage(msg.channel,"That skin doesn't exist! Maybe you should spend your time more usefull than using this bot to search for skins.");
           } else {
             if (skinData.success === true) {
               if (skinData.stattrak){skinData.stattrak = "Stattrak";} else {skinData.stattrak = "";}
@@ -848,7 +848,7 @@ var commands = {
                       bot.sendMessage(msg.channel,sendArray[i]);
                     }
                 }else {
-                bot.sendMessage(msg.channel,"Search for "+suffix+" failed!");
+                bot.sendMessage(msg.channel,"Search for "+suffix+" failed! But if you ask nicely, maybe someone will make the movie");
           }
           } else {
             console.log("Got an error: ", error, ", status code: ", response.statusCode);
